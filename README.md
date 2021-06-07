@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+
+## https://stackoverflow.com/questions/58653710/cannot-fetch-data-from-rails-at-reactjs
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
