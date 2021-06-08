@@ -7,6 +7,7 @@ import { Container, Menu, PageBody } from './AppStyled';
 
 import HomeScreen from './pages/HomeScreen';
 import Tela2Screen from './pages/Tela2Screen';
+import AddProduct from './pages/AddProduct';
 
 import PrivateRoute from './components/PrivateRoute';
 import MenuItem from './components/MenuItem';
@@ -21,7 +22,8 @@ export default () => {
                 <Menu>
                     <MenuItem title="Loja" icon="/assets/store.png" link="/"/>
                     <MenuItem title="Pedidos" icon="/assets/order.png" link="/orders"/>
-                    <MenuItem title="Meu Perfil" icon="/assets/profile.png" link="/profile"/>                    
+                    <MenuItem title="Meu Perfil" icon="/assets/profile.png" link="/profile"/>
+                    <MenuItem title="Add Product" icon="/assets/profile.png" link="/addproduct"/>                    
                 </Menu>
                 <PageBody>
                     <Switch>
@@ -30,6 +32,9 @@ export default () => {
                         </Route>
                         <Route exact path="/login">
                             <div>Tela de login</div>
+                        </Route>
+                        <Route exact path="/addproduct">
+                            <AddProduct />
                         </Route>
                         <PrivateRoute exact path="/orders">
                             <div>Tela de pedidos</div>

@@ -14,14 +14,32 @@ export default {
     
     return json;
   },
-  getProducts: async () => {
-    const res = await fetch(BASE+'/products');
+  getProducts: async (category, page, search) => {
+    
+    let fields = {};
+    if( category !== 0){
+      fields.category = category;
+    }
+    if( page > 0 ){
+      fields.page = page;
+    }
+    if( search != ''){
+      fields.search = search;
+    }
+
+    let queryString = new URLSearchParams(fields).toString(); 
+
+    const res = await fetch(BASE+'/products?'+queryString);
     const json = await res.json();
 
-    console.log("AQUI 2");
-    
-    console.log(json);
-    
+    return json;
+  },
+  postProduct: async (fData) => {
+    const res = await fetch(BASE+'/product/add',{
+      method: 'POST',
+      body: fData
+    })
+    const json = await res.json();
     return json;
   }
 };

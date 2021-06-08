@@ -22,7 +22,7 @@ export default ({data}) => {
       data-for="tip-top"
     > 
       <ProductPhotoArea>
-        <ProductPhoto src={data.image} />        
+        <ProductPhoto src={data.image != "nullo" ? data.image : data.featured_image.url} />        
       </ProductPhotoArea>
       <ProductInfoArea>
         <ProductName>
