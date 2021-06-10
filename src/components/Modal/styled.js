@@ -16,7 +16,6 @@ export const Container = styled.div`
   color: #136713;
   
   margin-right: 10px;
-  cursor: pointer;
   transition: all ease .5s;
 `;
 
@@ -27,28 +26,4 @@ export const ModalBody = styled.div`
   max-width: 100vw;
   max-height: 90vh; 
   overflow: auto;
-`;
-export const ProductInfoArea = styled.div`
-  flex: 1;
-  margin: 0 10px;
-`; 
-export const ProductButtonArea = styled.div``; 
-
-export const ProductPhoto = styled.img`
-  width: 100%;
-`;
-export const ProductName = styled.div`
-  font-size: 20px;
-  font-weight: bold;
-`; 
-export const ProductPrice = styled.div`
-  font-size: 14px;
-`; 
-export const ProductIngredients = styled.div`
-  font-size: 11px;
-`;  
-
-export const ProductButton = styled.img`
-  width: 15px;
-  height: 15px;
 `;

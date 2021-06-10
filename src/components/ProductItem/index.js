@@ -12,12 +12,18 @@ import {
   ProductButton 
 } from './styled';
 
-export default ({data}) => {
+export default ({data, onClick}) => {
+
+
+  const handleClick = () => {
+    onClick(data);
+  }
+
   return (
     <Container     
        
       id={data.id}
-      onClick={()=>alert('clicou')}
+      onClick={handleClick}
       data-tip={data.name}
       data-for="tip-top"
     > 

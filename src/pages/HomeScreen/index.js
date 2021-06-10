@@ -15,6 +15,7 @@ import Header from '../../components/Header';
 import CategoryItem from '../../components/CategoryItem';
 import ProductItem from '../../components/ProductItem';
 import Modal from '../../components/Modal';
+import ModalProduct from '../../components/ModalProduct';
 
 import api from '../../api';
 
@@ -28,7 +29,8 @@ export default () => {
     const [products, setProducts] = useState([]);
     const [totalPages, setTotalPages] = useState(4);
 
-    const [modalStatus, setModalStatus] = useState(true);
+    const [modalStatus, setModalStatus] = useState(false);
+    const [modalData, setModalData] = useState({});
 
     const [activeCategory, setActiveCategory] = useState(0);
     const [activePage, setActivePage] = useState(1);
@@ -42,6 +44,11 @@ export default () => {
             setActivePage(prods.result.page)
         }
         ReactToolTip.rebuild();
+    }
+
+    const handleProductClick = (data) => {
+        setModalData(data);
+        setModalStatus(true);
     }
 
     useEffect(()=>{
@@ -103,6 +110,7 @@ export default () => {
                             <ProductItem
                                 key={index}
                                 data={item}
+                                onClick={handleProductClick}
                             />
                         ))}
                     </ProductList>
@@ -123,9 +131,10 @@ export default () => {
                 </ProductPaginationArea>
             }
             <Modal status={modalStatus} setStatus={setModalStatus}>
-                Conteúdo do Modal
+                {/* Conteúdo do Modal
                 <div style={{backgroundColor: '#f00', width: 600, height: 400 }} ></div>
-                Fim do conteúdo
+                Fim do conteúdo */}
+                <ModalProduct data={modalData} setStatus={setModalStatus}/>
             </Modal>
         </Container>
     );
