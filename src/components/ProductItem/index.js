@@ -28,7 +28,7 @@ export default ({data, onClick}) => {
       data-for="tip-top"
     > 
       <ProductPhotoArea>
-        <ProductPhoto src={data.image != "nullo" ? data.image : data.featured_image.url} />        
+        <ProductPhoto src={data.image != "null" ? data.image : data.featured_image} />        
       </ProductPhotoArea>
       <ProductInfoArea>
         <ProductName>

@@ -53,7 +53,8 @@ export default () => {
 
     useEffect(()=>{
         clearTimeout(searchTimer);
-        searchTimer = setTimeout(() => {            
+        searchTimer = setTimeout(() => {
+            setActiveCategory(0);            
             setActiveSearch(headerSearch);                            
         }, 2000);
     },[headerSearch])
@@ -71,8 +72,22 @@ export default () => {
 
     useEffect(()=>{
         setProducts([]);
+        setActiveCategory(0);        
         getProducts();        
-    },[activeCategory, activePage, activeSearch]);
+    },[activeSearch]);
+
+    useEffect(()=>{
+        setProducts([]);
+        setActiveCategory(0);
+        setActiveSearch('');
+        getProducts();        
+    },[activePage]);
+
+    useEffect(()=>{
+        setProducts([]);
+        setActiveSearch('');
+        getProducts();        
+    },[activeCategory]);
     
 
     return (

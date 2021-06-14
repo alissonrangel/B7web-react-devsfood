@@ -58,7 +58,7 @@ export default ({data, setStatus}) => {
   return (
     <Container >
       <ProductArea>
-        <ProductPhoto src={data.image} />
+        <ProductPhoto src={data.image != "null" ? data.image : data.featured_image} />
         <ProductInfoArea>
           <ProductDetails>
             <ProductName>{data.name}</ProductName>
